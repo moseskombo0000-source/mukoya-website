@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b14">
+<title>MUKOYA | Official Website</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080b14;
+  color: white;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,11,20,0.95);
+  border-bottom: 1px solid #202b42;
+  padding: 17px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.logo span {
+  color: #00bfff;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #c8d2e5;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: #00bfff;
+}
+
+.menu {
+  display: none;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 26px;
+}
+
+.hero {
+  min-height: 570px;
+  padding: 110px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 80% 40%, #102c55 0%, transparent 55%),
+    linear-gradient(135deg,#080b14,#101a30);
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.tag {
+  color: #00bfff;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 9vw, 85px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #00bfff;
+}
+
+.hero p {
+  color: #b5c2d8;
+  max-width: 550px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #00a8e8;
+  color: white;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid #00bfff;
+}
+
+section {
+  padding: 75px 8%;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-title span {
+  color: #00bfff;
+}
+
+.intro {
+  color: #aab8cc;
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #101a2b;
+  border: 1px solid #20334e;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #00bfff;
+}
+
+.card h3 {
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #aab8cc;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.about {
+  background: #0c1220;
+}
+
+.contact {
+  background: linear-gradient(135deg,#101a30,#080b14);
+}
+
+.contact a {
+  color: #00bfff;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #8291a8;
+  background: #05070c;
+  font-size: 13px;
+  border-top: 1px solid #202b42;
+}
+
+@media(max-width:700px) {
+  header {
+    padding: 14px 5%;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: #0b1220;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 520px;
+    padding: 85px 7%;
+  }
+
+  section {
+    padding: 60px 7%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MUKOYA<span>.</span></div>
+
+  <button class="menu" onclick="toggleMenu()">☰</button>
+
+  <nav id="navigation">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#education" onclick="closeMenu()">Education</a>
+    <a href="#gallery" onclick="closeMenu()">Gallery</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">WELCOME TO THE OFFICIAL PLATFORM</div>
+
+    <h1>THIS IS<br><span>MUKOYA.</span></h1>
+
+    <p>
+      A digital home for creativity, education, innovation,
+      projects and ideas. Explore the world of Mukoya.
+    </p>
+
+    <a href="#about" class="btn">Explore More</a>
+    <a href="#contact" class="btn secondary">Get in Touch</a>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <h2 class="section-title">About <span>Mukoya</span></h2>
+
+  <p class="intro">
+    Welcome to Mukoya, an independent digital platform
+    bringing together information, creativity, knowledge
+    and innovation in one place.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>Our Platform</h3>
+      <p>A central digital space for ideas, information and opportunities.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚀</div>
+      <h3>Our Vision</h3>
+      <p>To build, explore and create meaningful digital experiences.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>Innovation</h3>
+      <p>Exploring new ideas and turning possibilities into projects.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Our <span>Projects</span></h2>
+  <p class="intro">Discover projects, developments and creative work.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Digital Projects</h3>
+      <p>Websites, technology and digital experiments.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Creative Works</h3>
+      <p>Design, graphics, branding and creative concepts.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h3>Future Projects</h3>
+      <p>New ideas and upcoming developments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="education">
+  <h2 class="section-title">Education & <span>Resources</span></h2>
+
+  <p class="intro">
+    A space dedicated to learning, educational resources,
+    academic information and knowledge sharing.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Learning</h3>
+      <p>Educational materials and learning resources.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔬</div>
+      <h3>Science</h3>
+      <p>Scientific knowledge and discoveries.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Study Resources</h3>
+      <p>Academic notes, revision and useful materials.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">Our <span>Gallery</span></h2>
+
+  <p class="intro">
+    A dedicated space for photographs, memories,
+    designs and visual collections.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">📸</div>
+      <h3>Photography</h3>
+      <p>Photos and visual collections.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🖼️</div>
+      <h3>Designs</h3>
+      <p>Artwork, graphics and visual creations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Get in <span>Touch</span></h2>
+
+  <p class="intro">
+    Have a question, suggestion or collaboration idea?
+    Get in touch.
+  </p>
+
+  <p>Website: <strong>www.mukoya.com</strong></p>
+  <p>Contact information will be added here.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> MUKOYA. All Rights Reserved.</p>
+  <p>Built with vision. Powered by innovation.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("navigation").classList.remove("active");
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
