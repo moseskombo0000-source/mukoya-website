@@ -4,228 +4,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b14">
-<title>MUKOYA | Official Website</title>
+<meta name="theme-color" content="#050914">
+<meta name="description" content="MUKOYA | Innovation, Knowledge, Vision">
+<title>MUKOYA | Beyond Ordinary</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+:root {
+  --bg:#050914;
+  --panel:#0b1425;
+  --blue:#168cff;
+  --cyan:#00d9ff;
+  --white:#f4f8ff;
+  --muted:#9aabc2;
 }
-
+* {margin:0;padding:0;box-sizing:border-box}
+html {scroll-behavior:smooth}
 body {
-  font-family: Arial, sans-serif;
-  background: #080b14;
-  color: white;
-  line-height: 1.6;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
 }
+a {color:inherit;text-decoration:none}
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(8,11,20,0.95);
-  border-bottom: 1px solid #202b42;
-  padding: 17px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:20;
+  background:rgba(5,9,20,.88);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.07);
 }
-
-.logo {
-  font-size: 27px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: #fff;
+.nav {
+  max-width:1150px;
+  margin:auto;
+  padding:17px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-
-.logo span {
-  color: #00bfff;
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  letter-spacing:3px;
 }
-
-nav {
-  display: flex;
-  gap: 20px;
+.brand-mark {
+  width:37px;
+  height:37px;
+  border:2px solid var(--cyan);
+  display:grid;
+  place-items:center;
+  color:var(--cyan);
+  transform:rotate(45deg);
+  box-shadow:0 0 16px #008cff55;
 }
-
+.brand-mark span {transform:rotate(-45deg);font-size:19px}
+nav {display:flex;gap:25px;align-items:center}
 nav a {
-  color: #c8d2e5;
-  text-decoration: none;
-  font-size: 13px;
+  color:var(--muted);
+  font-size:13px;
+  transition:.3s;
 }
-
-nav a:hover {
-  color: #00bfff;
-}
-
+nav a:hover {color:var(--cyan)}
 .menu {
-  display: none;
-  background: none;
-  color: white;
-  border: none;
-  font-size: 26px;
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:26px;
 }
 
+/* HERO */
 .hero {
-  min-height: 570px;
-  padding: 110px 8%;
-  display: flex;
-  align-items: center;
+  min-height:100vh;
+  padding:150px 22px 90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
   background:
-    radial-gradient(ellipse at 80% 40%, #102c55 0%, transparent 55%),
-    linear-gradient(135deg,#080b14,#101a30);
+    radial-gradient(ellipse at 50% 45%,#063c7060,transparent 55%),
+    linear-gradient(140deg,#050914,#07152a 55%,#050914);
+}
+.hero:before,.hero:after {
+  content:"";
+  position:absolute;
+  border:1px solid #168cff22;
+  border-radius:50%;
+  width:500px;
+  height:500px;
+  animation:rotate 25s linear infinite;
+}
+.hero:after {
+  width:700px;
+  height:700px;
+  animation-direction:reverse;
+}
+@keyframes rotate {
+  to {transform:rotate(360deg)}
 }
 
 .hero-content {
-  max-width: 750px;
+  position:relative;
+  z-index:3;
+  max-width:850px;
 }
-
-.tag {
-  color: #00bfff;
-  letter-spacing: 4px;
-  font-size: 12px;
-  font-weight: bold;
+.eyebrow {
+  color:var(--cyan);
+  letter-spacing:5px;
+  font-size:12px;
+  margin-bottom:20px;
 }
-
 .hero h1 {
-  font-size: clamp(48px, 9vw, 85px);
-  line-height: 1.1;
-  margin: 20px 0;
+  font-size:clamp(48px,10vw,100px);
+  line-height:1.2;
+  letter-spacing:7px;
 }
-
 .hero h1 span {
-  color: #00bfff;
+  display:inline-block;
+  background:linear-gradient(
+    90deg,#ffffff,#00d9ff,#168cff,#ffffff
+  );
+  background-size:250% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:
+    mukoyaMove 4s ease-in-out infinite,
+    mukoyaGlow 2s ease-in-out infinite alternate,
+    mukoyaColor 5s linear infinite;
 }
-
+@keyframes mukoyaMove {
+  0%,100% {transform:translateX(-22px)}
+  50% {transform:translateX(22px)}
+}
+@keyframes mukoyaGlow {
+  from {filter:drop-shadow(0 0 5px #008cff)}
+  to {filter:drop-shadow(0 0 25px #00d9ff)}
+}
+@keyframes mukoyaColor {
+  to {background-position:250% center}
+}
 .hero p {
-  color: #b5c2d8;
-  max-width: 550px;
-  margin-bottom: 30px;
+  max-width:590px;
+  margin:24px auto 32px;
+  color:var(--muted);
+  font-size:17px;
 }
-
+.actions {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
 .btn {
-  display: inline-block;
-  background: #00a8e8;
-  color: white;
-  text-decoration: none;
-  padding: 13px 25px;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-right: 10px;
+  padding:13px 25px;
+  border-radius:5px;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:1px;
+  transition:.3s;
+  display:inline-block;
+}
+.primary {
+  background:linear-gradient(100deg,#087bff,#00cfff);
+  color:white;
+}
+.secondary {
+  border:1px solid #426080;
+  color:white;
+}
+.btn:hover {
+  transform:translateY(-4px);
+  box-shadow:0 8px 25px #008cff55;
+}
+.scroll {
+  margin-top:65px;
+  color:#647b99;
+  font-size:11px;
+  letter-spacing:3px;
 }
 
-.btn.secondary {
-  background: transparent;
-  border: 1px solid #00bfff;
+/* PARTICLES */
+.particles {
+  position:absolute;
+  inset:0;
+  z-index:1;
+  overflow:hidden;
+  pointer-events:none;
+}
+.particle {
+  position:absolute;
+  bottom:-20px;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:#00d9ff;
+  box-shadow:0 0 10px #00d9ff;
+  animation:floatUp linear infinite;
+}
+@keyframes floatUp {
+  0% {transform:translateY(0);opacity:0}
+  10% {opacity:.9}
+  90% {opacity:.7}
+  100% {transform:translateY(-110vh);opacity:0}
 }
 
-section {
-  padding: 75px 8%;
+/* CONTENT */
+section {padding:95px 22px}
+.container {max-width:1100px;margin:auto}
+.section-tag {
+  color:var(--cyan);
+  font-size:11px;
+  letter-spacing:4px;
 }
-
 .section-title {
-  font-size: 32px;
-  margin-bottom: 12px;
+  font-size:clamp(30px,5vw,46px);
+  margin:10px 0 18px;
 }
-
-.section-title span {
-  color: #00bfff;
+.section-intro {
+  color:var(--muted);
+  max-width:650px;
 }
-
-.intro {
-  color: #aab8cc;
-  max-width: 650px;
-  margin-bottom: 35px;
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
 }
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 20px;
+.about-art {
+  min-height:290px;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle,#0b3a65,#091326 65%);
+  border:1px solid #168cff44;
+  border-radius:12px;
 }
-
-.card {
-  background: #101a2b;
-  border: 1px solid #20334e;
-  padding: 25px;
-  border-radius: 12px;
-  transition: 0.3s;
+.about-art strong {
+  font-size:65px;
+  letter-spacing:8px;
+  color:var(--cyan);
+  text-shadow:0 0 35px #008cff;
 }
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: #00bfff;
+.panel-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:35px;
 }
-
-.card h3 {
-  color: #00bfff;
-  margin-bottom: 10px;
+.panel {
+  padding:27px;
+  background:var(--panel);
+  border:1px solid #ffffff12;
+  border-radius:9px;
+  transition:.3s;
 }
-
-.card p {
-  color: #aab8cc;
-  font-size: 14px;
+.panel:hover {
+  transform:translateY(-6px);
+  border-color:#168cff88;
+  box-shadow:0 10px 30px #008cff18;
 }
-
-.icon {
-  font-size: 30px;
-  margin-bottom: 10px;
+.panel .symbol {
+  font-size:28px;
+  color:var(--cyan);
+  margin-bottom:15px;
 }
-
-.about {
-  background: #0c1220;
-}
-
+.panel h3 {margin-bottom:10px;font-size:18px}
+.panel p {color:var(--muted);font-size:14px}
+.dark-section {background:#080f1d}
 .contact {
-  background: linear-gradient(135deg,#101a30,#080b14);
+  text-align:center;
+  padding:80px 25px;
+  background:radial-gradient(ellipse at center,#0a3260,#050914 70%);
+  border:1px solid #168cff33;
+  border-radius:12px;
 }
-
-.contact a {
-  color: #00bfff;
-}
-
 footer {
-  text-align: center;
-  padding: 25px;
-  color: #8291a8;
-  background: #05070c;
-  font-size: 13px;
-  border-top: 1px solid #202b42;
+  padding:25px;
+  text-align:center;
+  color:#71839b;
+  font-size:12px;
+  border-top:1px solid #ffffff12;
 }
 
-@media(max-width:700px) {
-  header {
-    padding: 14px 5%;
-  }
-
-  .menu {
-    display: block;
-  }
-
+/* MOBILE */
+@media(max-width:750px) {
   nav {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    background: #0b1220;
-    padding: 20px;
-    flex-direction: column;
+    display:none;
+    position:absolute;
+    top:68px;
+    left:0;
+    width:100%;
+    background:#080f1d;
+    padding:25px;
+    flex-direction:column;
+    border-bottom:1px solid #168cff44;
   }
-
-  nav.active {
-    display: flex;
-  }
-
-  .hero {
-    min-height: 520px;
-    padding: 85px 7%;
-  }
-
-  section {
-    padding: 60px 7%;
+  nav.open {display:flex}
+  .menu {display:block}
+  .about-grid {grid-template-columns:1fr}
+  .panel-grid {grid-template-columns:1fr}
+  .hero h1 {letter-spacing:3px}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
   }
 }
 </style>
@@ -234,175 +325,202 @@ footer {
 <body>
 
 <header>
-  <div class="logo">MUKOYA<span>.</span></div>
-
-  <button class="menu" onclick="toggleMenu()">☰</button>
-
-  <nav id="navigation">
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#projects" onclick="closeMenu()">Projects</a>
-    <a href="#education" onclick="closeMenu()">Education</a>
-    <a href="#gallery" onclick="closeMenu()">Gallery</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-  </nav>
+  <div class="nav">
+    <a href="#home" class="brand">
+      <div class="brand-mark"><span>M</span></div>
+      MUKOYA
+    </a>
+    <button class="menu" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+    <nav id="navigation">
+      <a href="#home" onclick="closeMenu()">HOME</a>
+      <a href="#about" onclick="closeMenu()">ABOUT</a>
+      <a href="#projects" onclick="closeMenu()">PROJECTS</a>
+      <a href="#education" onclick="closeMenu()">EDUCATION</a>
+      <a href="#gallery" onclick="closeMenu()">GALLERY</a>
+      <a href="#contact" onclick="closeMenu()">CONTACT</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 
-<div class="hero" id="home">
-  <div class="hero-content">
-    <div class="tag">WELCOME TO THE OFFICIAL PLATFORM</div>
+<section class="hero" id="home">
 
-    <h1>THIS IS<br><span>MUKOYA.</span></h1>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow">INNOVATION · KNOWLEDGE · VISION</div>
+
+    <h1>WELCOME TO<br><span>MUKOYA</span></h1>
 
     <p>
-      A digital home for creativity, education, innovation,
-      projects and ideas. Explore the world of Mukoya.
+      A digital space for ideas, creativity, education and innovation.
+      Discover projects, explore knowledge and see what is possible.
     </p>
 
-    <a href="#about" class="btn">Explore More</a>
-    <a href="#contact" class="btn secondary">Get in Touch</a>
+    <div class="actions">
+      <a class="btn primary" href="#about">EXPLORE MUKOYA</a>
+      <a class="btn secondary" href="#projects">VIEW PROJECTS</a>
+    </div>
+
+    <div class="scroll">SCROLL TO DISCOVER ↓</div>
   </div>
-</div>
+</section>
 
-<section class="about" id="about">
-  <h2 class="section-title">About <span>Mukoya</span></h2>
-
-  <p class="intro">
-    Welcome to Mukoya, an independent digital platform
-    bringing together information, creativity, knowledge
-    and innovation in one place.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <div class="icon">🌐</div>
-      <h3>Our Platform</h3>
-      <p>A central digital space for ideas, information and opportunities.</p>
+<section id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="section-tag">01 / ABOUT</div>
+      <h2 class="section-title">More Than a Website.</h2>
+      <p class="section-intro">
+        MUKOYA is a growing digital platform built around creativity,
+        learning, technology and personal development. It is a place
+        where ideas take shape and possibilities become projects.
+      </p>
     </div>
+    <div class="about-art"><strong>M.</strong></div>
+  </div>
+</section>
 
-    <div class="card">
-      <div class="icon">🚀</div>
-      <h3>Our Vision</h3>
-      <p>To build, explore and create meaningful digital experiences.</p>
-    </div>
+<section class="dark-section" id="projects">
+  <div class="container">
+    <div class="section-tag">02 / PROJECTS</div>
+    <h2 class="section-title">Ideas Into Reality.</h2>
+    <p class="section-intro">
+      A growing collection of digital experiments, creative concepts
+      and practical projects.
+    </p>
 
-    <div class="card">
-      <div class="icon">💡</div>
-      <h3>Innovation</h3>
-      <p>Exploring new ideas and turning possibilities into projects.</p>
+    <div class="panel-grid">
+      <article class="panel">
+        <div class="symbol">⌘</div>
+        <h3>Digital Projects</h3>
+        <p>Websites, digital tools and technology-driven ideas.</p>
+      </article>
+      <article class="panel">
+        <div class="symbol">✦</div>
+        <h3>Creative Works</h3>
+        <p>Design, visual concepts and creative experiments.</p>
+      </article>
+      <article class="panel">
+        <div class="symbol">◈</div>
+        <h3>Future Ideas</h3>
+        <p>New concepts and projects waiting to be developed.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="projects">
-  <h2 class="section-title">Our <span>Projects</span></h2>
-  <p class="intro">Discover projects, developments and creative work.</p>
+<section id="education">
+  <div class="container">
+    <div class="section-tag">03 / EDUCATION</div>
+    <h2 class="section-title">Knowledge Opens Doors.</h2>
+    <p class="section-intro">
+      A space dedicated to learning, academic resources and the
+      exchange of knowledge.
+    </p>
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">💻</div>
-      <h3>Digital Projects</h3>
-      <p>Websites, technology and digital experiments.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎨</div>
-      <h3>Creative Works</h3>
-      <p>Design, graphics, branding and creative concepts.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">⚙️</div>
-      <h3>Future Projects</h3>
-      <p>New ideas and upcoming developments.</p>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="education">
-  <h2 class="section-title">Education & <span>Resources</span></h2>
-
-  <p class="intro">
-    A space dedicated to learning, educational resources,
-    academic information and knowledge sharing.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <div class="icon">📚</div>
-      <h3>Learning</h3>
-      <p>Educational materials and learning resources.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔬</div>
-      <h3>Science</h3>
-      <p>Scientific knowledge and discoveries.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📝</div>
-      <h3>Study Resources</h3>
-      <p>Academic notes, revision and useful materials.</p>
+    <div class="panel-grid">
+      <article class="panel">
+        <div class="symbol">◎</div>
+        <h3>Learning Resources</h3>
+        <p>Study materials and useful educational resources.</p>
+      </article>
+      <article class="panel">
+        <div class="symbol">⌬</div>
+        <h3>Science & Discovery</h3>
+        <p>Exploring scientific ideas and the world around us.</p>
+      </article>
+      <article class="panel">
+        <div class="symbol">↗</div>
+        <h3>Personal Growth</h3>
+        <p>Skills, curiosity and lifelong learning.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="gallery">
-  <h2 class="section-title">Our <span>Gallery</span></h2>
+<section class="dark-section" id="gallery">
+  <div class="container">
+    <div class="section-tag">04 / GALLERY</div>
+    <h2 class="section-title">The Visual Space.</h2>
+    <p class="section-intro">
+      A home for photographs, artwork, designs and visual stories.
+      Gallery content will be added here.
+    </p>
 
-  <p class="intro">
-    A dedicated space for photographs, memories,
-    designs and visual collections.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <div class="icon">📸</div>
-      <h3>Photography</h3>
-      <p>Photos and visual collections.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🖼️</div>
-      <h3>Designs</h3>
-      <p>Artwork, graphics and visual creations.</p>
+    <div class="panel-grid">
+      <article class="panel">
+        <div class="symbol">▧</div>
+        <h3>Photography</h3>
+        <p>Moments captured and preserved.</p>
+      </article>
+      <article class="panel">
+        <div class="symbol">◉</div>
+        <h3>Design</h3>
+        <p>Visual experiments and artwork.</p>
+      </article>
+      <article class="panel">
+        <div class="symbol">✧</div>
+        <h3>Collections</h3>
+        <p>Selected visuals and creative highlights.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2 class="section-title">Get in <span>Touch</span></h2>
-
-  <p class="intro">
-    Have a question, suggestion or collaboration idea?
-    Get in touch.
-  </p>
-
-  <p>Website: <strong>www.mukoya.com</strong></p>
-  <p>Contact information will be added here.</p>
+<section id="contact">
+  <div class="container contact">
+    <div class="section-tag">05 / CONTACT</div>
+    <h2 class="section-title">Let's Connect.</h2>
+    <p class="section-intro" style="margin:0 auto 25px">
+      Have an idea, question or opportunity?
+      The next chapter could start with a conversation.
+    </p>
+    <p style="color:var(--cyan);font-size:13px">
+      CONTACT DETAILS COMING SOON
+    </p>
+  </div>
 </section>
 
 </main>
 
 <footer>
-  <p>© <span id="year"></span> MUKOYA. All Rights Reserved.</p>
-  <p>Built with vision. Powered by innovation.</p>
+  <p>© <span id="year"></span> MUKOYA. ALL RIGHTS RESERVED.</p>
+  <p>BEYOND ORDINARY.</p>
 </footer>
 
 <script>
 function toggleMenu() {
-  document.getElementById("navigation").classList.toggle("active");
+  document.getElementById("navigation").classList.toggle("open");
 }
-
 function closeMenu() {
-  document.getElementById("navigation").classList.remove("active");
+  document.getElementById("navigation").classList.remove("open");
 }
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
+
+/* CREATE FLOATING PARTICLES */
+const particleArea = document.getElementById("particles");
+
+for (let i = 0; i < 45; i++) {
+  const particle = document.createElement("span");
+  particle.className = "particle";
+
+  particle.style.left = Math.random() * 100 + "%";
+  particle.style.animationDuration =
+    (7 + Math.random() * 12) + "s";
+  particle.style.animationDelay =
+    (Math.random() * 12) + "s";
+  particle.style.opacity = Math.random() * 0.8;
+
+  const size = 2 + Math.random() * 3;
+  particle.style.width = size + "px";
+  particle.style.height = size + "px";
+
+  particleArea.appendChild(particle);
+}
 </script>
 
 </body>
