@@ -9,7 +9,7 @@
 <meta name="author" content="MUKOYA">
 <title>MUKOYA | The Mind Behind the Vision</title>
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23050914'/%3E%3Cpath d='M50 10 90 50 50 90 10 50Z' fill='none' stroke='%2300d9ff' stroke-width='4'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='43' font-weight='bold' fill='%2300d9ff'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23050914'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='65' font-weight='bold' fill='%2300d9ff'%3EM%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,9 +25,15 @@
   --muted:#9aabc2;
 }
 
-* {margin:0;padding:0;box-sizing:border-box}
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-html {scroll-behavior:smooth}
+html {
+  scroll-behavior:smooth;
+}
 
 body {
   background:var(--bg);
@@ -37,9 +43,14 @@ body {
   overflow-x:hidden;
 }
 
-a {color:inherit;text-decoration:none}
+a {
+  color:inherit;
+  text-decoration:none;
+}
 
-button {font:inherit}
+button {
+  font:inherit;
+}
 
 /* LOADING SCREEN */
 
@@ -95,7 +106,10 @@ button {font:inherit}
   animation:loading 2s ease forwards;
 }
 
-@keyframes loading {to {width:100%}}
+@keyframes loading {
+  to {width:100%}
+}
+
 @keyframes pulse {
   from {opacity:.6;transform:scale(.96)}
   to {opacity:1;transform:scale(1.04)}
@@ -160,7 +174,9 @@ nav a {
   transition:.3s;
 }
 
-nav a:hover {color:var(--cyan)}
+nav a:hover {
+  color:var(--cyan);
+}
 
 .menu {
   display:none;
@@ -187,7 +203,8 @@ nav a:hover {color:var(--cyan)}
     linear-gradient(140deg,#050914,#07152a 55%,#050914);
 }
 
-.hero:before,.hero:after {
+.hero:before,
+.hero:after {
   content:"";
   position:absolute;
   border:1px solid #168cff22;
@@ -204,7 +221,9 @@ nav a:hover {color:var(--cyan)}
   animation-direction:reverse;
 }
 
-@keyframes rotate {to {transform:rotate(360deg)}}
+@keyframes rotate {
+  to {transform:rotate(360deg)}
+}
 
 .hero-content {
   position:relative;
@@ -386,7 +405,9 @@ nav a:hover {color:var(--cyan)}
 
 /* GENERAL SECTIONS */
 
-section {padding:90px 22px}
+section {
+  padding:90px 22px;
+}
 
 .container {
   max-width:1100px;
@@ -434,7 +455,7 @@ section {padding:90px 22px}
   text-shadow:0 0 35px #008cff;
 }
 
-/* PROJECT CARDS */
+/* CONTENT CARDS */
 
 .panel-grid {
   display:grid;
@@ -473,15 +494,9 @@ section {padding:90px 22px}
   font-size:14px;
 }
 
-.panel-link {
-  display:inline-block;
-  color:var(--cyan);
-  font-size:12px;
-  margin-top:16px;
-  letter-spacing:1px;
+.dark-section {
+  background:#080f1d;
 }
-
-.dark-section {background:#080f1d}
 
 /* CONTACT */
 
@@ -527,6 +542,7 @@ section {padding:90px 22px}
   color:var(--muted);
   font-size:12px;
   margin-top:25px;
+  line-height:2;
 }
 
 /* FOOTER */
@@ -566,7 +582,9 @@ footer {
   display:none;
 }
 
-#topButton.show {display:block}
+#topButton.show {
+  display:block;
+}
 
 /* MOBILE */
 
@@ -583,19 +601,33 @@ footer {
     border-bottom:1px solid #168cff44;
   }
 
-  nav.open {display:flex}
+  nav.open {
+    display:flex;
+  }
 
-  .menu {display:block}
+  .menu {
+    display:block;
+  }
 
-  .about-grid {grid-template-columns:1fr}
+  .about-grid {
+    grid-template-columns:1fr;
+  }
 
-  .panel-grid {grid-template-columns:1fr}
+  .panel-grid {
+    grid-template-columns:1fr;
+  }
 
-  .hero h1 {letter-spacing:2px}
+  .hero h1 {
+    letter-spacing:2px;
+  }
 
-  .tagline {letter-spacing:1.5px}
+  .tagline {
+    letter-spacing:1.5px;
+  }
 
-  section {padding:70px 20px}
+  section {
+    padding:70px 20px;
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -632,7 +664,6 @@ footer {
     <nav id="navigation">
       <a href="#home" onclick="closeMenu()">HOME</a>
       <a href="#about" onclick="closeMenu()">ABOUT</a>
-      <a href="#projects" onclick="closeMenu()">PROJECTS</a>
       <a href="#education" onclick="closeMenu()">EDUCATION</a>
       <a href="#gallery" onclick="closeMenu()">GALLERY</a>
       <a href="#contact" onclick="closeMenu()">CONTACT</a>
@@ -645,11 +676,9 @@ footer {
 <!-- HOME -->
 
 <section class="hero" id="home">
-
   <div class="particles" id="particles"></div>
 
   <div class="hero-content">
-
     <div class="eyebrow">INNOVATION · KNOWLEDGE · VISION</div>
 
     <h1>
@@ -660,13 +689,13 @@ footer {
     <div class="tagline">THE MIND BEHIND THE VISION.</div>
 
     <p>
-      A digital space for ideas, creativity, education and innovation.
-      Discover projects, explore knowledge and see what is possible.
+      A digital space for creativity, knowledge, technology and new ideas.
+      Explore the vision, discover possibilities and connect with MUKOYA.
     </p>
 
     <div class="actions">
       <a class="btn primary" href="#about">EXPLORE MUKOYA</a>
-      <a class="btn secondary" href="#projects">VIEW PROJECTS</a>
+      <a class="btn secondary" href="#contact">GET IN TOUCH</a>
     </div>
 
     <div class="clock-box">
@@ -675,7 +704,6 @@ footer {
     </div>
 
     <div class="scroll">SCROLL TO DISCOVER ↓</div>
-
   </div>
 </section>
 
@@ -683,15 +711,14 @@ footer {
 
 <section id="about">
   <div class="container about-grid">
-
     <div>
       <div class="section-tag">01 / ABOUT</div>
       <h2 class="section-title">More Than a Website.</h2>
 
       <p class="section-intro">
-        MUKOYA is a growing digital platform built around creativity,
-        learning, technology and personal development. It is a place
-        where ideas take shape and possibilities become projects.
+        MUKOYA is a growing digital space built around creativity,
+        learning, technology and personal development. It represents
+        curiosity, ambition and the courage to turn ideas into reality.
       </p>
 
       <p class="section-intro" style="margin-top:18px">
@@ -703,61 +730,14 @@ footer {
     <div class="about-art">
       <strong>M.</strong>
     </div>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-
-<section class="dark-section" id="projects">
-  <div class="container">
-
-    <div class="section-tag">02 / PROJECTS</div>
-    <h2 class="section-title">Ideas Into Reality.</h2>
-
-    <p class="section-intro">
-      A collection of digital projects, practical tools and creative
-      experiments.
-    </p>
-
-    <div class="panel-grid">
-
-      <article class="panel">
-        <div class="symbol">⌘</div>
-        <h3>SHUM Class Details</h3>
-        <p>
-          A class information collection platform designed to
-          organize student details.
-        </p>
-      </article>
-
-      <article class="panel">
-        <div class="symbol">◈</div>
-        <h3>EDUF Attendance</h3>
-        <p>
-          A digital attendance system created for the EDUF 111 A2 group.
-        </p>
-      </article>
-
-      <article class="panel">
-        <div class="symbol">◎</div>
-        <h3>ZOOL EDUF Census</h3>
-        <p>
-          A simple digital census platform for collecting class
-          participation statistics.
-        </p>
-      </article>
-
-    </div>
   </div>
 </section>
 
 <!-- EDUCATION -->
 
-<section id="education">
+<section class="dark-section" id="education">
   <div class="container">
-
-    <div class="section-tag">03 / EDUCATION</div>
+    <div class="section-tag">02 / EDUCATION</div>
     <h2 class="section-title">Knowledge Opens Doors.</h2>
 
     <p class="section-intro">
@@ -766,7 +746,6 @@ footer {
     </p>
 
     <div class="panel-grid">
-
       <article class="panel">
         <div class="symbol">✦</div>
         <h3>Biological Sciences</h3>
@@ -792,26 +771,23 @@ footer {
           classroom.
         </p>
       </article>
-
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
 
-<section class="dark-section" id="gallery">
+<section id="gallery">
   <div class="container">
-
-    <div class="section-tag">04 / GALLERY</div>
+    <div class="section-tag">03 / GALLERY</div>
     <h2 class="section-title">The Visual Space.</h2>
 
     <p class="section-intro">
       A home for photographs, artwork, designs and visual stories.
-      Gallery images can be added in a future update.
+      This space can grow with new images and creative collections.
     </p>
 
     <div class="panel-grid">
-
       <article class="panel">
         <div class="symbol">▧</div>
         <h3>Photography</h3>
@@ -829,17 +805,15 @@ footer {
         <h3>Collections</h3>
         <p>Selected visuals and creative highlights.</p>
       </article>
-
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 
-<section id="contact">
+<section class="dark-section" id="contact">
   <div class="container contact">
-
-    <div class="section-tag">05 / CONTACT</div>
+    <div class="section-tag">04 / CONTACT</div>
     <h2 class="section-title">Let's Connect.</h2>
 
     <p class="section-intro">
@@ -861,7 +835,7 @@ footer {
       </a>
 
       <a class="contact-button"
-         href="https://www.facebook.com/search/top?q=MU%20KO%20YA"
+         href="https://www.facebook.com/profile.php?id=100083017242298"
          target="_blank" rel="noopener">
         f Facebook
       </a>
@@ -876,9 +850,9 @@ footer {
 
     <p class="contact-note">
       WhatsApp: +254713658177<br>
-      Email: mosesmukoya69@gmail.com
+      Email: mosesmukoya69@gmail.com<br>
+      Telegram: 0713658177
     </p>
-
   </div>
 </section>
 
@@ -950,16 +924,13 @@ const fontClasses = [
 let fontIndex = 0;
 
 setInterval(function() {
-
   fontIndex = (fontIndex + 1) % fontClasses.length;
 
   heroName.classList.remove(...fontClasses);
   heroName.classList.add(fontClasses[fontIndex]);
 
   heroName.classList.remove("font-swap");
-
   void heroName.offsetWidth;
-
   heroName.classList.add("font-swap");
 
 }, 2500);
@@ -967,7 +938,6 @@ setInterval(function() {
 /* LIVE KENYA CLOCK */
 
 function updateClock() {
-
   const now = new Date();
 
   const time = new Intl.DateTimeFormat("en-KE", {
